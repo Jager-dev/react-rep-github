@@ -1,0 +1,10 @@
+.input{
+    margin: 0 auto;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+}
+.browse{
+    text-align: center;
+    background-color: #000;
+}
