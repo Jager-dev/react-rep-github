@@ -1,4 +1,10 @@
 a{
     text-decoration: none;
+}
+.readme{
     color: #059c43;
+}
+.repo{
+    font-weight: bolder;
+    color: #000;
 }

@@ -3,7 +3,7 @@ import {Container, Navbar} from "react-bootstrap";
 
 const Footer = ({user}) => {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" className="footer">
       <Container>
         <Navbar.Brand>{user.login}</Navbar.Brand>
       </Container>

@@ -23,3 +23,28 @@ a{
   display: flex;
   flex-direction: column;
 }
+.browse{
+  background: url("https://images.unsplash.com/photo-1473654729523-203e25dfda10?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80") no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.browse-form{
+  border-radius: 10px;
+}
+.title{
+  color: #fff;
+}
+.browse-btn{
+  height: 38px;
+  color: black;
+}
+
+.header{
+  background: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=893&q=80") no-repeat center/cover;
+}
+.footer{
+  background: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=893&q=80") no-repeat center/cover;
+}

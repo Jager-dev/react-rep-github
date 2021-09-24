@@ -27,8 +27,8 @@ const Home = () => {
 
     if (repos !== undefined){
       console.log(repos)
-      axios(`https://api.github.com/users/${login}/${repos}/readme`,
-        {headers: {'Accept': 'application/vnd.github.raw'}})
+      axios(`https://api.github.com/repos/${login}/${repos}/readme`,
+        {headers: {'Accept': 'application/vnd.github.html.raw'}})
         .then(({data}) => {
           setReadme(data)
           setIsLoading(false)
@@ -44,12 +44,12 @@ const Home = () => {
 
   return (
     <div>
-      <Header search={setSearch} user={user}/>
+      <Header setSearch={setSearch} user={user}/>
       <main className="main">
         <Route exact path="/:login">
           <Repositories repositories={repositories} search={search}/>
         </Route>
-        <Route exact path="/:login/:repos"><Readme /></Route>
+        <Route exact path="/:login/:repos"><Readme readme={readme}/></Route>
       </main>
       <Footer user={user}/>
     </div>

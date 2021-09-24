@@ -21,10 +21,10 @@ const Repositories = ({repositories, search}) => {
               repositories.filter(item => item.name.includes(search)).map(item =>
                 <tr key={item.id}>
                   <td>{"" + "♦"}</td>
-                  <td>{item.name}</td>
+                  <td><Link to={`/${login}/${item.name}`} className="repo">{item.name}</Link></td>
                   <td>GO</td>
                   <td>{item.updated_at}</td>
-                  <td><Link to={`/${login}/${item.name}`}>View readme</Link></td>
+                  <td><Link to={`/${login}/${item.name}`} className="readme">View readme</Link></td>
                 </tr>
               )
             }
