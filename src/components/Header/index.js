@@ -1,19 +1,20 @@
 import React from 'react';
-import {Navbar, Container, Nav} from "react-bootstrap";
+import {Container, Navbar} from "react-bootstrap";
 
-const Header = () => {
+const Header = ({setSearch, user}) => {
   return (
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">g</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+  <Navbar bg="dark" variant="dark">
+    <Container>
+        <img src={user.avatar_url} alt="" width="50"/>
+        <Navbar.Brand className="ms-3">{user.login}</Navbar.Brand>
+      <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+        <input className="me-2" type="search" placeholder="Search" aria-label="Search"
+               onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+    </Container>
+  </Navbar>
   );
-};
+}
 
 export default Header;

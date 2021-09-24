@@ -1,11 +1,11 @@
 import React from 'react';
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Container, Navbar} from "react-bootstrap";
 
-const Footer = () => {
+const Footer = ({user}) => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand>{user.login}</Navbar.Brand>
       </Container>
     </Navbar>
   );

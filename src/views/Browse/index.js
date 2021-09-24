@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import {Button, Form, Row, Col} from "react-bootstrap";
 import {useHistory} from 'react-router-dom'
-import Particles from 'react-particles-js'
 
 const Browse = () => {
   const [inputValue, setInputValue] = useState("")
   const history = useHistory()
-
-
 
   const input = (e) => {
     setInputValue(e.target.value)
@@ -26,37 +23,16 @@ const Browse = () => {
 
   return (
     <div className="browse">
-    {/*<Particles*/}
-    {/*  params={{*/}
-    {/*    "particles": {*/}
-    {/*      "number": {*/}
-    {/*        "value": 150*/}
-    {/*      },*/}
-    {/*      "size": {*/}
-    {/*        "value": 5*/}
-    {/*      }*/}
-    {/*    },*/}
-    {/*    "interactivity": {*/}
-    {/*      "events": {*/}
-    {/*        "onhover": {*/}
-    {/*          "enable": true,*/}
-    {/*          "mode": "repulse"*/}
-    {/*        }*/}
-    {/*      }*/}
-    {/*    }*/}
-    {/*  }} />*/}
-    <div className="input">
-      <Form>
-        <Row>
-          <Col>
-            <Form.Control placeholder="Username"  className="search_rep" onKeyDown={enterPress} value={inputValue} onChange={input}/>
-          </Col>
-          <Col>
+      <Form  className='p-5 main-form'>
+          <div className='d-flex'>
+            <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+              <Col sm={10}>
+                <Form.Control placeholder="Username"  className="search_rep" onKeyDown={enterPress} value={inputValue} onChange={input}/>
+              </Col>
+            </Form.Group>
             <Button variant="secondary" onClick={handleClick} disabled={!inputValue.trim()}>View repositories</Button>
-          </Col>
-        </Row>
+          </div>
       </Form>
-    </div>
     </div>
   );
 };

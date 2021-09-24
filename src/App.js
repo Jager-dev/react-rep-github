@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Route exact path="/"><Browse /></Route>
       <Route exact path="/:login"><Home /></Route>
-      <Route exact path="/:login/:readme"><Home /></Route>
+      <Route exact path="/:login/:repos"><Home /></Route>
     </Router>
   );
 }

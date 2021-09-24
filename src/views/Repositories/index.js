@@ -1,29 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import Spinner from "../../components/Spinner";
 import {Link, useParams} from "react-router-dom";
-import axios from "axios";
 import {Container, Table} from "react-bootstrap";
 import './index.css'
 
-const Repositories = () => {
-  const [repos, setRepos] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const params = useParams()
-
-  useEffect(() => {
-    axios(`https://api.github.com/users/${params.login}/repos`)
-      .then(({data}) => {
-        setRepos(data)
-        setIsLoading(false)
-      })
-  }, [params.login])
-
-  if (isLoading){
-    return  (
-      <Spinner />
-    )
-  }
-
+const Repositories = ({repositories, search}) => {
+  const {login} = useParams()
   return (
         <Container>
           <Table hover>
@@ -38,13 +18,13 @@ const Repositories = () => {
             </thead>
             <tbody>
             {
-              repos.map(item =>
+              repositories.filter(item => item.name.includes(search)).map(item =>
                 <tr key={item.id}>
                   <td>{"" + "♦"}</td>
                   <td>{item.name}</td>
                   <td>GO</td>
                   <td>{item.updated_at}</td>
-                  <td><Link to={`/`}>View readme</Link></td>
+                  <td><Link to={`/${login}/${item.name}`}>View readme</Link></td>
                 </tr>
               )
             }

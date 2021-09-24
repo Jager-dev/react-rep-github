@@ -1,27 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import Home from "../Home";
-import {useParams} from "react-router-dom";
-import axios from "axios";
+import Markdown from "markdown-to-jsx";
+import {Container} from "react-bootstrap";
 
 
-const Readme = () => {
-  const [readme, setReadme] = useState("")
-  const {login, repo} = useParams()
-
-  useEffect(() => {
-    axios(`https://api.github.com/repos/${login}/${repo}/readme`,
-      {headers: {'Accept': 'application/vnd.github.raw'}})
-      .then(({data}) => setReadme(data))
-  },[login, repo])
-
+const Readme = ({readme}) => {
   return (
-    <Home>
-      {
-        readme.map(item =>
-        item.name
-        )
-      }
-    </Home>
+    <div>
+      <Container>
+        <Markdown>
+          {readme}
+        </Markdown>
+      </Container>
+    </div>
   );
 };
 
