@@ -9,7 +9,6 @@ const Repositories = ({repositories, search}) => {
           <Table hover>
             <thead className="thead">
             <tr>
-              <th/>
               <th>NAME</th>
               <th>DEPLOYMENT</th>
               <th>LAST COMMIT</th>
@@ -20,7 +19,6 @@ const Repositories = ({repositories, search}) => {
             {
               repositories.filter(item => item.name.includes(search)).map(item =>
                 <tr key={item.id}>
-                  <td>{"" + "♦"}</td>
                   <td><Link to={`/${login}/${item.name}`} className="repo">{item.name}</Link></td>
                   <td>GO</td>
                   <td>{item.updated_at}</td>

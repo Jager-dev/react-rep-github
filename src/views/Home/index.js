@@ -34,7 +34,7 @@ const Home = () => {
           setIsLoading(false)
         })
     }
-  },[])
+  },[login, repos])
 
   if (isLoading){
     return  (
